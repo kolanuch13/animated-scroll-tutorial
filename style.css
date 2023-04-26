@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+body {
+  background-color: #131316;
+  color: black;
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+section {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 110vh;
+}
+
+.circle {
+  position: absolute;
+  z-index: -1;
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+  background-color: rgba(255, 0, 0, 0.315);
+}
+
+.hidden:nth-child(1n) {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 2s;
+    background-color: white;
+
+}
+
+.show:nth-child(1n) {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+.hidden:nth-child(2n) {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(100%);
+  transition: all 2s;
+    background-color: white;
+
+}
+
+.show:nth-child(2n) {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+@media(prefers-reduced-montion) {
+  .hidden {
+    color: black;
+    transform: none;
+  }
+}
+
+.photos {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.photo img {
+  border-radius: 10px;
+}
+
+.photo:nth-child(2) {
+  transition-delay: 200ms;
+}
+
+.photo:nth-child(3) {
+  transition-delay: 400ms;
+}
+
+.photo:nth-child(4) {
+  transition-delay: 600ms;
+}
